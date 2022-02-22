@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 import HomePage from '../../pages/home';
@@ -17,6 +17,10 @@ function App() {
    // useSmoothScroll(appRef);
 
    const { pathname } = useLocation();
+
+   useEffect(() => {
+      window.api.actions.listenToClipboardChanges();
+   }, []);
 
    // Note: Electron uses the /main_window (from package.json) url as the entry point for the renderer process.
 

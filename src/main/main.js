@@ -31,6 +31,7 @@ const createWindow = () => {
       // resizable: true,
       webPreferences: {
          nodeIntegration: true,
+         preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       },
       show: false,
       icon: path.join(__dirname, 'assets', 'clipboard.png'),
@@ -42,6 +43,7 @@ const createWindow = () => {
       height: 600,
       webPreferences: {
          nodeIntegration: true,
+         preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       },
       show: false,
    });
@@ -50,7 +52,10 @@ const createWindow = () => {
 
    // and load the index.html of the app.
 
-   console.log({ loadUrl: MAIN_WINDOW_WEBPACK_ENTRY });
+   console.log({
+      loadUrl: MAIN_WINDOW_WEBPACK_ENTRY,
+      preloadUrl: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+   });
 
    mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
@@ -58,9 +63,10 @@ const createWindow = () => {
    IS_DEV && mainWindow.webContents.openDevTools();
 
    mainWindow.once('ready-to-show', () => {
-      setupListener();
       mainWindow.show();
    });
+
+   setupListener();
 };
 
 // This method will be called when Electron has finished
