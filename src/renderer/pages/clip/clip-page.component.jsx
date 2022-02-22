@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Redirect, useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { useGlobalState } from '../../context/store';
 
 import './clip-page.styles.scss';
@@ -17,7 +17,7 @@ function ClipPage() {
    }, [clipboard, id]);
 
    if (id > clipboard.length) {
-      return <Redirect to="/404" />;
+      return <Navigate to="/404" />;
    }
 
    return (

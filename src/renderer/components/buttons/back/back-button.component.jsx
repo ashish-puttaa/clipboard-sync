@@ -1,12 +1,12 @@
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ArrowSVG from '../../../assets/right-arrow.svg';
 import './back-button.styles.scss';
 
 function BackButton() {
-   const history = useHistory();
+   const navigate = useNavigate();
 
    const handleClick = () => {
-      history.goBack();
+      navigate(-1);
    };
 
    return (

@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 import Toast from '../toast';
 import ArrowSVG from '../../assets/right-arrow.svg';
@@ -43,9 +43,9 @@ function Clip(props) {
 
 export default Clip;
 
-// import { useHistory, useLocation } from 'react-router-dom';
+// import { useNavigate, useLocation } from 'react-router-dom';
 // const location = useLocation();
-// const history = useHistory();
+// const history = useNavigate();
 
 // const clipRef = useRef();
 
