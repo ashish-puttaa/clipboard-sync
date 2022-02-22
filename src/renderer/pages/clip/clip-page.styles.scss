@@ -1,0 +1,58 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.clip-page {
+   padding: 20px;
+   width: 100%;
+   min-height: 100%;
+   padding-top: 0;
+
+   border: 2px solid $light-yellow;
+   border-radius: 7px;
+   background-color: $light-yellow;
+
+   position: relative;
+
+   .content {
+      @include wrap-text;
+
+      font-family: unset;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-top: 17px;
+   }
+
+   .back-button-wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+   }
+
+   .header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 2px;
+
+      .index {
+         font-family: 'Abril Fatface', cursive;
+         font-size: 25px;
+         font-weight: 700;
+         color: $dark-gray;
+
+         display: flex;
+         align-items: center;
+      }
+
+      .index::before,
+      .index::after {
+         content: '';
+         display: inline-block;
+         width: 5px;
+         height: 1px;
+         background-color: $light-gray;
+         margin: 0 8px;
+         margin-top: 12px;
+      }
+   }
+}

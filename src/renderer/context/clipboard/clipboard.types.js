@@ -1,0 +1,7 @@
+const ClipboardActionTypes = {
+   CLEAR_CLIPBOARD_QUEUE: 'CLEAR_CLIPBOARD_QUEUE',
+   RESET_CLIPBOARD_QUEUE: 'RESET_CLIPBOARD_QUEUE',
+   ADD_TO_CLIPBOARD_QUEUE: 'ADD_TO_CLIPBOARD_QUEUE',
+};
+
+export default ClipboardActionTypes;

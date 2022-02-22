@@ -1,0 +1,23 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.back-button {
+   @include noSelect;
+   display: inline-block;
+   padding: 8px;
+   cursor: pointer;
+
+   &__icon {
+      height: 15px;
+      width: 15px;
+      transform: rotate(180deg);
+      transform-origin: 50% 50%;
+
+      svg {
+         height: 100%;
+         width: 100%;
+         // fill: $light-gray;
+         fill: $dark-gray;
+      }
+   }
+}

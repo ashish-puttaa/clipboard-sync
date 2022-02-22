@@ -1,0 +1,44 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.settings__connection {
+   &-options {
+      display: flex;
+      justify-content: space-evenly;
+      border-radius: 5px;
+
+      button {
+         @include noSelect;
+         flex: 1;
+         border: 0;
+         background-color: inherit;
+
+         position: relative;
+         padding: 6px;
+         cursor: pointer;
+
+         span {
+            position: relative;
+            z-index: 2;
+         }
+
+         & .brush-stroke-wrapper {
+            position: absolute;
+            width: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, calc(-50% + 2px));
+            z-index: 1;
+
+            svg {
+               fill: $light-yellow;
+               width: 100%;
+            }
+         }
+      }
+   }
+
+   &-option-wrapper {
+      // margin-top: 25px;
+   }
+}

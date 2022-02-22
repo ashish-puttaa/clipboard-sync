@@ -1,0 +1,79 @@
+@import '../../../../../styles/variables';
+@import '../../../../../styles/mixins';
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;600;700&display=swap');
+
+.settings__connection-option__local {
+   margin: 0 13px;
+   // margin: 0 4px;
+   margin-top: 40px;
+
+   form {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .input-container {
+      margin-bottom: 12px;
+   }
+
+   label {
+      color: $light-gray;
+      font-size: 12px;
+      display: block;
+      margin-left: 2px;
+      margin-bottom: 8px;
+   }
+
+   input {
+      // border: 2px solid $light-yellow;
+      border: 1px solid $light-yellow;
+      // box-shadow: inset 0 0 0 1px $light-yellow;
+      // border: none;
+      border-radius: 5px;
+      // padding: 6px 7px;
+      padding: 7px 8px;
+      width: 100%;
+      background-color: lighten($light-yellow, 8%);
+      font-size: 14px;
+
+      &:focus {
+         outline-width: 0;
+         background-color: white;
+         // border: 2px solid $light-yellow;
+         // box-shadow: inset 0 0 0 1px $light-yellow, 0 0 0 1px $light-yellow;
+         box-shadow: 0 0 3px 1px $light-yellow;
+      }
+
+      &.valid {
+         // border-right-color: lightgreen;
+      }
+
+      &.invalid {
+         // box-shadow: inset 0 0 0 1px lightcoral, 0 0 0 1px lightcoral;
+         box-shadow: 0 0 3px 1px lightcoral;
+         // border-color: lightcoral;
+      }
+   }
+
+   input[type='number']::-webkit-inner-spin-button,
+   input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+   }
+
+   input[type='submit'] {
+      cursor: pointer;
+      background-color: $light-yellow;
+      align-self: flex-end;
+      padding: 7px 15px;
+      margin-top: 5px;
+      width: auto;
+      box-shadow: 0 0 2px 1px darken($light-yellow, 10%);
+
+      &:disabled {
+         cursor: not-allowed;
+         box-shadow: none;
+      }
+   }
+}

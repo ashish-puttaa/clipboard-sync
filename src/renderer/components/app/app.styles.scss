@@ -1,0 +1,53 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+// Root styles
+
+body {
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+      'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   /* background-color: #000; */
+}
+
+code {
+   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   @include centerThis;
+   height: 100vh;
+}
+
+// App styles
+
+.App {
+   height: 400px;
+   width: 325px;
+
+   border: 2px solid $light-yellow;
+   border-radius: 7px;
+   background-color: $light-yellow;
+
+   overflow-y: auto;
+   position: relative;
+
+   &::-webkit-scrollbar {
+      width: 0; /* Remove scrollbar space */
+      background: transparent; /* Optional: just make scrollbar invisible */
+   }
+
+   .home-settings-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+   }
+}

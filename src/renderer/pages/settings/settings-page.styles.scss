@@ -1,0 +1,65 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.settings-page {
+   background-color: #fff;
+   min-height: 100%;
+   display: flex;
+   font-size: 13px;
+
+   &__left {
+      background-color: $light-yellow;
+      width: 32%;
+
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+
+      &-title {
+         font-size: 14px;
+         font-weight: 700;
+         color: $dark-gray;
+         padding: 8px 10px;
+      }
+
+      &-content {
+         margin-top: 15px;
+         padding: 4px 6px;
+         padding-left: calc(6px - 2px); // due to the 2px border
+      }
+
+      &-option {
+         @include noSelect;
+         cursor: pointer;
+         padding: 6px;
+         border-radius: 5px;
+
+         &:not(:first-child) {
+            margin-top: 8px;
+         }
+
+         &.selected {
+            background-color: #fff;
+         }
+      }
+   }
+
+   &__right {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+
+      &-header {
+      }
+
+      &-content {
+         padding: 4px 8px;
+         margin-top: 15px;
+         flex: 1;
+      }
+   }
+
+   .back-button-wrapper {
+      padding: 2px;
+   }
+}
