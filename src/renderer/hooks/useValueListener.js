@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { addToClipboardQueue } from '../context/clipboard/clipboard.actions';
+import { addToClipboardList } from '../context/clipboard/clipboard.actions';
 import { useGlobalState } from '../context/store';
 
 export function useValueListener() {
@@ -9,7 +9,7 @@ export function useValueListener() {
 
    useEffect(() => {
       const interval = setInterval(() => {
-         addToClipboardQueue(dispatch, `new item ${++count}`);
+         addToClipboardList(dispatch, `new item ${++count}`);
       }, 5000);
 
       return () => clearInterval(interval);

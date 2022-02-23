@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 import HomePage from '../../pages/home';
@@ -8,25 +8,15 @@ import SettingsPage from '../../pages/settings/settings-page.component';
 import SettingsButton from '../../components/buttons/settings';
 import HomeButton from '../../components/buttons/home';
 
-import { useGlobalState } from '../../context/store';
-import { addToClipboardQueue } from '../../context/clipboard';
-
 import './app.styles.scss';
+import { useSetupClipboardListener } from '../../hooks';
 
 function App() {
    const appRef = useRef();
-   const [context, dispatch] = useGlobalState();
    const { pathname } = useLocation();
 
    // useSmoothScroll(appRef);
-
-   useEffect(() => {
-      window.api.actions.listenToClipboardChanges();
-
-      window.api.listeners.onClipboardChange((data) => {
-         addToClipboardQueue(dispatch, data);
-      });
-   }, []);
+   useSetupClipboardListener();
 
    // Note: Electron uses the /main_window (from package.json) url as the entry point for the renderer process.
 

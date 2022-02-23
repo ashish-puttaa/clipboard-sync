@@ -1,4 +1,4 @@
-export * from './useClipboardListener';
+export * from './useSetupClipboardListener';
 export * from './useWatchValue';
 export * from './useCombinedReducers';
 export * from './useSmoothScroll';

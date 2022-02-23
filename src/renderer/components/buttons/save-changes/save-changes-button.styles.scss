@@ -1,0 +1,18 @@
+@import '../../../styles/variables';
+
+.save-changes-button {
+   cursor: pointer;
+   background-color: $light-yellow;
+   align-self: flex-end;
+   padding: 7px 15px;
+   margin-top: 5px;
+   font-size: 14px;
+   border: none;
+   width: auto;
+   box-shadow: 0 0 2px 1px darken($light-yellow, 10%);
+
+   &:disabled {
+      cursor: not-allowed;
+      box-shadow: none;
+   }
+}

@@ -9,7 +9,9 @@ const actions = {
 
 const listeners = {
    onClipboardChange: (cb) => {
-      ipcRenderer.on(IpcChannels.CLIPBOARD_CHANGE, (event, data) => cb(data));
+      const handleChange = (event, data) => cb(data);
+      ipcRenderer.on(IpcChannels.CLIPBOARD_CHANGE, handleChange);
+      return () => ipcRenderer.removeListener(IpcChannels.CLIPBOARD_CHANGE, handleChange);
    },
    // onNotification: (cb) => {
    //    ipcRenderer.on(IpcChannels.NOTIFICATION, (event, data) => cb(data));

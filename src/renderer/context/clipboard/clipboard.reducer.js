@@ -9,14 +9,28 @@ const initialState = [
 
 const clipboardReducer = (state, action) => {
    switch (action.type) {
-      case ClipboardActionTypes.CLEAR_CLIPBOARD_QUEUE:
+      case ClipboardActionTypes.CLEAR_CLIP_LIST:
          return [];
 
-      case ClipboardActionTypes.RESET_CLIPBOARD_QUEUE:
+      case ClipboardActionTypes.RESET_CLIP_LIST:
          return initialState;
 
-      case ClipboardActionTypes.ADD_TO_CLIPBOARD_QUEUE:
+      case ClipboardActionTypes.SET_CLIP_LIST:
+         return [...action.payload];
+
+      case ClipboardActionTypes.ADD_TO_CLIP_LIST: {
          return [...state, action.payload];
+      }
+
+      case ClipboardActionTypes.TRIM_CLIP_LIST_TO_MAX_SIZE: {
+         const { maxSize } = action.options;
+
+         if (!maxSize || state.length <= maxSize) {
+            return state;
+         }
+
+         return state.slice(state.length - maxSize);
+      }
 
       default:
          return state;

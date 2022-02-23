@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import BackButton from '../../components/buttons/back';
 import ConnectionSettings from '../../components/settings/connection';
+import ApplicationSettings from '../../components/settings/application';
 import AboutSettings from '../../components/settings/about';
 
 import { capitalize } from '../../utils';
@@ -9,7 +10,7 @@ import { capitalize } from '../../utils';
 import './settings-page.styles.scss';
 
 function SettingsPage() {
-   const options = ['connection', 'about'];
+   const options = ['connection', 'application', 'about'];
    const [selectedOption, setSelectedOption] = useState(options[0]);
 
    const renderOptions = () =>
@@ -50,6 +51,7 @@ function SettingsPage() {
                {
                   {
                      connection: <ConnectionSettings />,
+                     application: <ApplicationSettings />,
                      about: <AboutSettings />,
                   }[selectedOption]
                }
