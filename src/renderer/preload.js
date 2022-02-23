@@ -8,6 +8,9 @@ const actions = {
 };
 
 const listeners = {
+   onClipboardChange: (cb) => {
+      ipcRenderer.on(IpcChannels.CLIPBOARD_CHANGE, (event, data) => cb(data));
+   },
    // onNotification: (cb) => {
    //    ipcRenderer.on(IpcChannels.NOTIFICATION, (event, data) => cb(data));
    // },
